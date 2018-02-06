@@ -1,0 +1,39 @@
+#/*============================================================================
+#
+#  PBREG: A software package for point based registration, including ICP for surfaces.
+#
+#  Copyright (c) University College London (UCL). All rights reserved.
+#
+#  This software is distributed WITHOUT ANY WARRANTY; without even
+#  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+#  PURPOSE.
+#
+#  See LICENSE.txt in the top level directory for details.
+#
+#============================================================================*/
+
+# Compute the installation prefix from this PBRegConfig.cmake file location.
+get_filename_component(PBREG_INSTALL_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+set(PBREG_VERSION_MAJOR "@PBREG_VERSION_MAJOR@")
+set(PBREG_VERSION_MINOR "@PBREG_VERSION_MINOR@")
+set(PBREG_VERSION_PATCH "@PBREG_VERSION_PATCH@")
+set(PBREG_BUILD_SHARED "@BUILD_SHARED_LIBS@")
+set(PBREG_LIBRARIES "@PBREG_LIBRARIES@")
+set(PBREG_C_FLAGS "@CMAKE_C_FLAGS@")
+set(PBREG_CXX_FLAGS "@CMAKE_CXX_FLAGS@")
+set(PBREG_EXE_LINKER_FLAGS "@CMAKE_EXE_LINKER_FLAGS@")
+set(PBREG_SHARED_LINKER_FLAGS "@CMAKE_SHARED_LINKER_FLAGS@")
+set(PBREG_MODULE_LINKER_FLAGS "@CMAKE_MODULE_LINKER_FLAGS@")
+
+set(PBREG_INCLUDE_DIRS "${PBREG_INSTALL_PREFIX}/@PBREG_INSTALL_INC_DIR@")
+set(PBREG_LIBRARY_DIRS "${PBREG_INSTALL_PREFIX}/@PBREG_INSTALL_LIB_DIR@")
+set(PBREG_README_FILE  "${PBREG_INSTALL_PREFIX}/README.md")
+set(PBREG_LICENSE_FILE "${PBREG_INSTALL_PREFIX}/LICENSE.txt")
+
+set(PBREG_USE_FILE "${PBREG_INSTALL_PREFIX}/UsePBReg.cmake")
+
+# See: https://www.stack.nl/~dimitri/doxygen/manual/external.html
+# And: I'm assuming this would only be used in Build folder.
+set(PBREG_DOXYGEN_TAG_PREFIX "Doxygen/PBREG.tag")
+set(PBREG_DOXYGEN_TAG_FILE "@CMAKE_CURRENT_BINARY_DIR@/Doxygen/PBREG.tag")
