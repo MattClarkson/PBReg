@@ -311,6 +311,13 @@ if(WIN32 AND NOT BUILD_SHARED_LIBS)
   add_definitions(-DPBREG_STATIC)
 endif()
 
+if(UNIX)
+  mitkFunctionCheckCompilerFlags("-Wno-deprecated-declarations" PBREG_NO_DEPRECATED_FLAG)
+  if(PBREG_NO_DEPRECATED_FLAG)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${PBREG_NO_DEPRECATED_FLAG}" CACHE STRING "FLags used by the compiler during all build types." FORCE)
+  endif()
+endif()
+
 include(pbrIncludeOpenMP)
 include(pbrIncludeMPI)
 
