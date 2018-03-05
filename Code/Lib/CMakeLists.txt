@@ -12,7 +12,7 @@
 #
 #============================================================================*/
 
-set(PBREG_LIBRARY_NAME pbreg)
+set(PBREG_LIBRARY_NAME pbreglib)
 
 set(PBREG_LIBRARY_SRCS
   pbrBasicTypes.cpp

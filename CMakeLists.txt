@@ -325,7 +325,7 @@ include(pbrIncludeMPI)
 ######################################################################
 # A few shortcuts for lists of libraries.
 ######################################################################
-set(PBREG_LIBRARIES pbreg)
+set(PBREG_LIBRARIES pbreglib)
 set(ALL_LIBRARIES ${PBREG_LIBRARIES} ${ALL_THIRD_PARTY_LIBRARIES} ${QT5_LINK_LIBRARIES})
 
 
