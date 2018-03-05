@@ -18,6 +18,6 @@ set(_command_line_apps
 
 foreach(_app ${_command_line_apps})
   add_executable(${_app} ${_app}.cpp)
-  target_link_libraries(${_app} pbreg ${ALL_THIRD_PARTY_LIBRARIES})
+  target_link_libraries(${_app} ${PBREG_LIBRARIES} ${ALL_THIRD_PARTY_LIBRARIES})
   PBREG_INSTALL_CL(TARGETS ${_app})
 endforeach()
